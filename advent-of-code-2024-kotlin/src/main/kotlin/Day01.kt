@@ -2,7 +2,7 @@ package org.fdesande
 
 import kotlin.math.abs
 
-class Day01() : AdventProblem {
+class Day01 : AdventProblem {
 
     companion object {
         private const val FIRST_INPUT = "/input01-1.txt"
