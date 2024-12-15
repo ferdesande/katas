@@ -1,5 +1,7 @@
 package org.fdesande
 
+import org.fdesande.common.FileUtils
+
 class Day05 : AdventProblem {
 
     companion object {
@@ -19,7 +21,7 @@ class Day05 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result:
+        // Valid result: 4713
         val fileBlocks = readFile(SECOND_INPUT)
 
         val nextPagesByPage = getNextPagesByPage(fileBlocks)
@@ -79,9 +81,7 @@ class Day05 : AdventProblem {
     }
 
     private fun readFile(fileName: String): FileBlocks {
-        val lines = (javaClass.getResource(fileName)?.readText()
-            ?: throw IllegalStateException("File not found: $fileName"))
-            .split("\n")
+        val lines = FileUtils.getLines(fileName)
 
         val firstBlock = mutableListOf<String>()
         val secondBlock = mutableListOf<String>()

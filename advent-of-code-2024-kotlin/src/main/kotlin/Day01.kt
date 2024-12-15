@@ -1,5 +1,6 @@
 package org.fdesande
 
+import org.fdesande.common.FileUtils
 import kotlin.math.abs
 
 class Day01 : AdventProblem {
@@ -24,9 +25,7 @@ class Day01 : AdventProblem {
     }
 
     private fun readFile(fileName: String): InputLists {
-        val fileText = this.javaClass.getResource(fileName)?.readText()
-            ?: throw IllegalStateException("File not found: $fileName")
-        val readValues = fileText.split("\n")
+        val readValues = FileUtils.getLines(fileName)
             .filter { line -> line.isNotBlank() }
             .map { line -> line.split(Regex("\\s+")) }
             .map { items -> items.map { item -> item.toInt() } }

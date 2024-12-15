@@ -1,5 +1,7 @@
 package org.fdesande
 
+import org.fdesande.common.FileUtils
+
 class Day02 : AdventProblem {
 
     companion object {
@@ -35,9 +37,7 @@ class Day02 : AdventProblem {
     }
 
     private fun readFile(fileName: String): List<List<Int>> {
-        val fileText = this.javaClass.getResource(fileName)?.readText()
-            ?: throw IllegalStateException("File not found: $fileName")
-        return fileText.split("\n")
+        return FileUtils.getLines(fileName)
             .filter { line -> line.isNotBlank() }
             .map { line -> line.split(Regex("\\s+")) }
             .map { items -> items.map { item -> item.toInt() } }
