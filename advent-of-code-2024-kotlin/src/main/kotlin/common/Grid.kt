@@ -16,8 +16,12 @@ class Grid(lines: List<String>) {
             maxY = grid.keys.maxOf { it.y },
         )
     }
+    fun getContent(): List<Pair<Point, Char>> = grid.entries.map { Pair(it.key, it.value) }
 }
 
 data class GridBounds(val minX: Int, val maxX: Int, val minY: Int, val maxY: Int)
 
-data class Point(val x: Int, val y: Int)
+data class Point(val x: Int, val y: Int){
+    operator fun plus(point: Point): Point = Point(x + point.x, y + point.y)
+    operator fun minus(point: Point): Point = Point(x - point.x, y - point.y)
+}
