@@ -1,5 +1,6 @@
 package org.fdesande
 
+import org.fdesande.common.Direction
 import org.fdesande.common.FileUtils
 import org.fdesande.common.Grid
 import org.fdesande.common.Point
@@ -93,6 +94,5 @@ class Day12 : AdventProblem {
             DirectedPoint(Point(x - 1, y), Direction.LEFT),
         )
 
-    private enum class Direction { UP, RIGHT, DOWN, LEFT }
     private data class DirectedPoint(val point: Point, val direction: Direction)
 }

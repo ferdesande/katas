@@ -1,5 +1,6 @@
 package org.fdesande
 
+import org.fdesande.common.Direction
 import org.fdesande.common.FileUtils
 import org.fdesande.common.Grid
 import org.fdesande.common.Point
@@ -43,7 +44,6 @@ class Day06 : AdventProblem {
         return EscapeRoute(path, actual in path, obstacle)
     }
 
-    private enum class Direction { UP, RIGHT, DOWN, LEFT }
     private data class EscapeRoute(val path: Set<Vector>, val hasLoop: Boolean, val obstacle: Point? = null) {
         fun print(grid: Grid): List<String> {
             val bounds = grid.getBounds()
