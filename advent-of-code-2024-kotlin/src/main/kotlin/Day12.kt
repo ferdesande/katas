@@ -1,9 +1,6 @@
 package org.fdesande
 
-import org.fdesande.common.Direction
-import org.fdesande.common.FileUtils
-import org.fdesande.common.Grid
-import org.fdesande.common.Point
+import org.fdesande.common.*
 
 class Day12 : AdventProblem {
 
@@ -69,7 +66,7 @@ class Day12 : AdventProblem {
         var neighbours = setOf(start)
         while (neighbours.isNotEmpty()) {
             neighbours = neighbours
-                .flatMap { point -> point.getNeighbours() }
+                .flatMap { point -> point.getNeighbors() }
                 .filter { point -> point in crop }
                 .filterNot { point -> border.contains(point) }
                 .toSet()
@@ -93,6 +90,4 @@ class Day12 : AdventProblem {
             DirectedPoint(Point(x, y + 1), Direction.DOWN),
             DirectedPoint(Point(x - 1, y), Direction.LEFT),
         )
-
-    private data class DirectedPoint(val point: Point, val direction: Direction)
 }

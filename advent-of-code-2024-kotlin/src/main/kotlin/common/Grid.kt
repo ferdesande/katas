@@ -36,9 +36,18 @@ class Grid(lines: List<String>) {
 data class GridBounds(val minX: Int, val maxX: Int, val minY: Int, val maxY: Int)
 
 data class Point(val x: Int, val y: Int) {
+    companion object {
+        val UP = Point(x = 0, y = -1)
+        val RIGHT = Point(x = 1, y = 0)
+        val DOWN = Point(x = 0, y = 1)
+        val LEFT = Point(x = -1, y = 0)
+    }
+
     operator fun plus(point: Point): Point = Point(x + point.x, y + point.y)
     operator fun minus(point: Point): Point = Point(x - point.x, y - point.y)
-    fun getNeighbours(): List<Point> = listOf(Point(x, y - 1), Point(x + 1, y), Point(x, y + 1), Point(x - 1, y))
+    fun getNeighbors(): List<Point> = listOf(this + UP, this + RIGHT, this + DOWN, this + LEFT)
 }
+
+data class DirectedPoint(val point: Point, val direction: Direction)
 
 enum class Direction { UP, RIGHT, DOWN, LEFT }

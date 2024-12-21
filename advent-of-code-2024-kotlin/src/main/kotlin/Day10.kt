@@ -44,7 +44,7 @@ class Day10 : AdventProblem {
 
             step++
             neighbors = neighbors
-                .flatMap { point: Point -> point.getNeighbours() }
+                .flatMap { point: Point -> point.getNeighbors() }
                 .filter { neighbor -> neighbor in grid.keys }
                 .filter { neighbor -> grid[neighbor] == step }
         }
