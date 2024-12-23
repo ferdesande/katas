@@ -6,22 +6,42 @@ class Day17 : AdventProblem {
 
     companion object {
         private const val INPUT = "/input17.txt"
-        private const val SAMPLE = "/input17-sample.txt"
     }
 
     override fun firstPart(): String {
         // Valid result: 2,0,7,3,0,3,1,3,7
-        val initialState = getInitialState(INPUT)
+        val initialState = getInitialState()
         return Computer(initialState).run()
     }
 
     override fun secondPart(): String {
-        // Valid result:
-        TODO()
+        // Valid result: 247839539763386
+        val initialState = getInitialState()
+        var candidates = setOf(0L)
+        while (candidates.isNotEmpty()) {
+            val nextCandidates = candidates.flatMap { a ->
+                (0..7)
+                    .map { i -> (a shl 3) + i }
+                    .map { newA -> Pair(newA, Computer(initialState).run(newA)) }
+                    .map { pair -> Pair(pair.first, pair.second.split(",").map { it.toInt() }) }
+                    .filter { pair -> pair.second == initialState.program.takeLast(pair.second.size) }
+            }
+
+            val result = nextCandidates
+                .filter { pair -> pair.second == initialState.program }
+                .minByOrNull { it.first }
+
+            if (result != null) {
+                return result.first.toString()
+            }
+
+            candidates = nextCandidates.map { it.first }.toSet()
+        }
+        return "Not found"
     }
 
-    private fun getInitialState(filePath: String): InitialState {
-        val lines = FileUtils.getLines(filePath).filter { it.isNotBlank() }
+    private fun getInitialState(): InitialState {
+        val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
             .map { line -> line.split(": ")[1].trim() }
 
         return InitialState(
@@ -33,8 +53,8 @@ class Day17 : AdventProblem {
     }
 
     private class Computer(private val initialState: InitialState) {
-        fun run(): String {
-            var registerA = initialState.a
+        fun run(newA: Long? = null): String {
+            var registerA = newA ?: initialState.a
             var registerB = initialState.b
             var registerC = initialState.c
             val program = initialState.program
