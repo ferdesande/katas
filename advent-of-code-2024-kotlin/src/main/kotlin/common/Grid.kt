@@ -1,6 +1,13 @@
 package org.fdesande.common
 
 class Grid(lines: List<String>) {
+    companion object {
+        fun create(rows: Int, cols: Int, defaultChar: Char = '.'): Grid {
+            val line = String((0 until cols).map { defaultChar }.toCharArray())
+            return Grid((0 until rows).map { line })
+        }
+    }
+
     private val grid: MutableMap<Point, Char> = lines
         .mapIndexed { y, value -> value.mapIndexed { x, c -> Point(x, y) to c } }
         .flatten().toMap().toMutableMap()
