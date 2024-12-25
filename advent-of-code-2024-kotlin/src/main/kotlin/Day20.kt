@@ -4,6 +4,7 @@ import org.fdesande.common.FileUtils
 import org.fdesande.common.Grid
 import org.fdesande.common.Point
 import kotlin.math.abs
+import kotlin.streams.asSequence
 
 class Day20 : AdventProblem {
 
@@ -33,12 +34,18 @@ class Day20 : AdventProblem {
         val matrix = getPointMatrix(cheatDistance)
 
         return result
-            .flatMap { point: Point -> matrix.map { Pair(point, it + point) } }
-            .filter { it.second in result }.map {
+            .parallelStream()
+            .flatMap { point -> matrix.parallelStream().map { Pair(point, it + point) } }
+            .filter { it.second in result }
+            .asSequence().toSet()
+            .parallelStream()
+            .map {
                 val distance =
                     resultIndexByPoint[it.second]!! - resultIndexByPoint[it.first]!! - it.first.getDistance(it.second)
                 Pair(it.first, it.second) to distance
-            }.associate { it.first to it.second }
+            }
+            .asSequence()
+            .associate { it.first to it.second }
     }
 
     private fun getNormalResult(grid: Grid): List<Point> {
