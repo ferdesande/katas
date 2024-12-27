@@ -3,7 +3,7 @@ package org.fdesande
 import java.time.Instant
 
 fun main() {
-    val problem = Day20()
+    val problem = Day21()
 
     val start = Instant.now()
     val firstPart = problem.firstPart()
