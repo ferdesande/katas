@@ -6,19 +6,18 @@ import kotlin.math.abs
 class Day01 : AdventProblem {
 
     companion object {
-        private const val FIRST_INPUT = "/input01-1.txt"
-        private const val SECOND_INPUT = "/input01-1.txt"
+        private const val INPUT = "/input01.txt"
     }
 
     override fun firstPart(): String {
         // Valid result: 3246517
-        return readFile(FIRST_INPUT).first.sorted()
-            .zip(readFile(FIRST_INPUT).second.sorted()) { first, second -> abs(first - second) }.sum().toString()
+        return readFile(INPUT).first.sorted()
+            .zip(readFile(INPUT).second.sorted()) { first, second -> abs(first - second) }.sum().toString()
     }
 
     override fun secondPart(): String {
         // Valid result: 29379307
-        val input = readFile(SECOND_INPUT)
+        val input = readFile(INPUT)
         val countByNumber = input.second.groupingBy { it }.eachCount()
 
         return input.first.sumOf { item -> item * (countByNumber[item] ?: 0) }.toString()

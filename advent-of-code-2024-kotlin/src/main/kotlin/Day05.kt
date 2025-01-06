@@ -5,13 +5,12 @@ import org.fdesande.common.FileUtils
 class Day05 : AdventProblem {
 
     companion object {
-        private const val FIRST_INPUT = "/input05-1.txt"
-        private const val SECOND_INPUT = "/input05-2.txt"
+        private const val INPUT = "/input05.txt"
     }
 
     override fun firstPart(): String {
         // Valid result: 7307
-        val fileBlocks = readFile(FIRST_INPUT)
+        val fileBlocks = readFile(INPUT)
 
         val nextPagesByPage = getNextPagesByPage(fileBlocks)
         return getUpdates(fileBlocks)
@@ -22,7 +21,7 @@ class Day05 : AdventProblem {
 
     override fun secondPart(): String {
         // Valid result: 4713
-        val fileBlocks = readFile(SECOND_INPUT)
+        val fileBlocks = readFile(INPUT)
 
         val nextPagesByPage = getNextPagesByPage(fileBlocks)
         return getUpdates(fileBlocks)

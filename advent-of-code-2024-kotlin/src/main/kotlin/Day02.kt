@@ -5,18 +5,17 @@ import org.fdesande.common.FileUtils
 class Day02 : AdventProblem {
 
     companion object {
-        private const val FIRST_INPUT = "/input02-1.txt"
-        private const val SECOND_INPUT = "/input02-2.txt"
+        private const val INPUT = "/input02.txt"
     }
 
     override fun firstPart(): String {
         // Valid result: 510
-        return readFile(FIRST_INPUT).count { report -> isValidReport(report) }.toString()
+        return readFile(INPUT).count { report -> isValidReport(report) }.toString()
     }
 
     override fun secondPart(): String {
         // Valid result: 553
-        return readFile(SECOND_INPUT)
+        return readFile(INPUT)
             .count { report -> isValidReportAdvanced(report) }.toString()
     }
 

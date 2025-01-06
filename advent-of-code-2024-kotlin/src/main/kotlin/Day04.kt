@@ -5,18 +5,17 @@ import org.fdesande.common.FileUtils
 class Day04 : AdventProblem {
 
     companion object {
-        private const val FIRST_INPUT = "/input04-1.txt"
-        private const val SECOND_INPUT = "/input04-2.txt"
+        private const val INPUT = "/input04.txt"
     }
 
     override fun firstPart(): String {
         // Valid result: 2468
-        return countLinearOccurrences(readFile(FIRST_INPUT)).toString()
+        return countLinearOccurrences(readFile(INPUT)).toString()
     }
 
     override fun secondPart(): String {
         // Valid result: 1864
-        return countCrossOccurrences(readFile(SECOND_INPUT)).toString()
+        return countCrossOccurrences(readFile(INPUT)).toString()
     }
 
     private fun readFile(fileName: String): List<String> {

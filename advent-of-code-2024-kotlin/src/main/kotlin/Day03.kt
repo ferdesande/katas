@@ -5,20 +5,19 @@ import org.fdesande.common.FileUtils
 class Day03 : AdventProblem {
 
     companion object {
-        private const val FIRST_INPUT = "/input03-1.txt"
-        private const val SECOND_INPUT = "/input03-2.txt"
+        private const val INPUT = "/input03.txt"
     }
 
     override fun firstPart(): String {
         // Valid result: 159833790
         return extractMultipliers(
-            readFile(FIRST_INPUT)
+            readFile(INPUT)
         ).sumOf { multipliers -> multipliers[0] * multipliers[1] }.toString()
     }
 
     override fun secondPart(): String {
         // Valid result: 89349241
-        return readFile(SECOND_INPUT)
+        return readFile(INPUT)
             .joinToString("\\n")
             .split(Regex("don't\\(\\).*?do\\(\\)")) // Hint: .*? is a no greedy .*
             .let { lines -> extractMultipliers(lines) }
