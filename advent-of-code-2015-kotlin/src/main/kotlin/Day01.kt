@@ -1,7 +1,6 @@
 package org.fdesande
 
 import org.fdesande.common.FileUtils
-import kotlin.math.abs
 
 class Day01 : AdventProblem {
 
@@ -10,12 +9,33 @@ class Day01 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result:
-        TODO()
+        // Valid result: 74
+        val line = FileUtils.getLines(INPUT).single { it.isNotBlank() }
+        return line.map {
+            when (it) {
+                '(' -> 1
+                ')' -> -1
+                else -> 0
+            }
+        }.sum().toString()
     }
 
     override fun secondPart(): String {
-        // Valid result:
-        TODO()
+        // Valid result: 1795
+        val line = FileUtils.getLines(INPUT).single { it.isNotBlank() }
+        var floor = 0
+
+        line.forEachIndexed { index, c ->
+            floor += when (c) {
+                '(' -> 1
+                ')' -> -1
+                else -> 0
+            }
+            if (floor == -1) {
+                return (index + 1).toString()
+            }
+        }
+
+        return "-1"
     }
 }
