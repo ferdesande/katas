@@ -12,7 +12,7 @@ class Day12 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: (original) 119433
+        // Valid result: 119433
         val json = FileUtils.getLines(INPUT).single { it.isNotBlank() }
         val matches = Regex("""-?(\d+)""").findAll(json)
             .map { it.groupValues[0] }

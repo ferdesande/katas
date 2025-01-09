@@ -13,7 +13,7 @@ class Day11 : AdventProblem {
     private var firstPassword = ""
 
     override fun firstPart(): String {
-        // Valid result: (original) hxbxxyzz
+        // Valid result: hxbxxyzz
         val password = FileUtils.getLines(INPUT).single { it.isNotBlank() }
         firstPassword = getNextValidPassword(password)
         return firstPassword
