@@ -9,12 +9,10 @@ class Day19 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 340
         return getOnsenResult().count { it.isNotEmpty() }.toString()
     }
 
     override fun secondPart(): String {
-        // Valid result: 717561822679428
         return getOnsenResult().sumOf { it.sumOf { solution -> solution.solutions } }.toString()
     }
 

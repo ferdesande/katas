@@ -11,13 +11,11 @@ class Day08 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 289
         val grid = FileUtils.getGrid(INPUT)
         return getAntiNodes(grid).size.toString()
     }
 
     override fun secondPart(): String {
-        // Valid result: 1030
         val grid = FileUtils.getGrid(INPUT)
         return getAntiNodesMultiple(grid).size.toString()
     }

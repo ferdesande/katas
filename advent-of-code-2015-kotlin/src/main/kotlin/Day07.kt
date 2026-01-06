@@ -11,7 +11,6 @@ class Day07 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 956
         val instructionByWire = FileUtils.getLines(INPUT)
             .mapNotNull { line -> INSTRUCTION_REGEX.find(line) }
             .associate { match -> match.groupValues[2] to match.groupValues[1] }
@@ -21,7 +20,6 @@ class Day07 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 40149
         val instructionByWire = FileUtils.getLines(INPUT)
             .mapNotNull { line -> INSTRUCTION_REGEX.find(line) }
             .associate { match -> match.groupValues[2] to match.groupValues[1] }

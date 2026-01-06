@@ -10,7 +10,6 @@ class Day09 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 6259790630969
         val input = FileUtils.getLines(INPUT).first()
         val expanded = expand(input.map { it })
         return compact(expanded)
@@ -20,7 +19,6 @@ class Day09 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 6289564433984
         val input = FileUtils.getLines(INPUT).first()
         val diskSectors = extractSectors(input)
         rearrangeDiskSectors(diskSectors)

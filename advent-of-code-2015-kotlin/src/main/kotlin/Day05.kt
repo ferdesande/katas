@@ -11,7 +11,6 @@ class Day05 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 238
         return FileUtils.getLines(INPUT).filter { it.isNotBlank() }
             .count { word ->
                 val vowelCount = word.count { it in VOWELS }
@@ -22,7 +21,6 @@ class Day05 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 69
         return FileUtils.getLines(INPUT).filter { it.isNotBlank() }
             .count { word ->
                 val pairs = (0 until word.lastIndex).any { i ->

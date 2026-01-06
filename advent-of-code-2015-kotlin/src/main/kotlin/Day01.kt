@@ -9,7 +9,6 @@ class Day01 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 74
         val line = FileUtils.getLines(INPUT).single { it.isNotBlank() }
         return line.map {
             when (it) {
@@ -21,7 +20,6 @@ class Day01 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 1795
         val line = FileUtils.getLines(INPUT).single { it.isNotBlank() }
         var floor = 0
 

@@ -17,13 +17,11 @@ class Day20 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 1502
         val grid = FileUtils.getGrid(INPUT)
         return calculateCheatsByPoint(grid, 2).values.count { it >= 100 }.toString()
     }
 
     override fun secondPart(): String {
-        // Valid result:
         val grid = FileUtils.getGrid(INPUT)
         return calculateCheatsByPoint(grid, 20).entries.count { it.value >= 100 }.toString()
     }

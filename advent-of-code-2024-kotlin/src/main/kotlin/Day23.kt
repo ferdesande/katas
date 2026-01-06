@@ -9,7 +9,6 @@ class Day23 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 1512
         val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         val connectionsByNode = getConnectionsByNode(lines)
         return getThreeNodeLinks(connectionsByNode)
@@ -18,7 +17,6 @@ class Day23 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: ac,ed,fh,kd,lf,mb,om,pe,qt,uo,uy,vr,wg
         val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         val solver = BronKerboschAlgorithm(getConnectionsByNode(lines))
         return solver.solve()

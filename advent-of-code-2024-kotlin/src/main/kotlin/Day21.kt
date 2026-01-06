@@ -12,7 +12,6 @@ class Day21 : AdventProblem {
     private val pathFinder = BestPathFinder()
 
     override fun firstPart(): String {
-        // Valid result: 176650
         val values = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         val numericValue = values.map { it.dropLast(1) }.map { it.toInt() }
 
@@ -24,7 +23,6 @@ class Day21 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 217698355426872
         val values = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         val numericValue = values.map { it.dropLast(1) }.map { it.toInt() }
 

@@ -14,7 +14,6 @@ class Day06 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 5242
         val grid = FileUtils.getGrid(INPUT)
         val start = grid.getSingleCharacterPoint(START)
         return getEscapeRoute(grid, Vector(start, Direction.UP))
@@ -24,7 +23,6 @@ class Day06 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 1424
         val grid = FileUtils.getGrid(INPUT)
         val start = Vector(grid.getSingleCharacterPoint(START), Direction.UP)
         return getEscapeRoute(grid, start).path.map { it.point }.toSet()

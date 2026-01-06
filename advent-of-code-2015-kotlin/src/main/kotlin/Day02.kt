@@ -9,7 +9,6 @@ class Day02 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 1606483
         val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         return extractDimensions(lines)
             .map { it + it[0] }
@@ -19,7 +18,6 @@ class Day02 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 3842356
         val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         val dimensions = extractDimensions(lines)
 

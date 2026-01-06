@@ -35,7 +35,6 @@ class Day16 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 103
         return FileUtils.getLines(INPUT)
             .mapNotNull { line -> parseAunt(line) }.toMap()
             .filter { entry -> entry.value.all { item -> AUNT_STUFF[item.key] == item.value } }
@@ -43,7 +42,6 @@ class Day16 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result:
         return FileUtils.getLines(INPUT)
             .mapNotNull { line -> parseAunt(line) }.toMap()
             .filter { entry ->

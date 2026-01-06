@@ -28,7 +28,6 @@ class Day15 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 1559280
         val input = getInput()
         return solve(input.first, input.second)
             .getContent()
@@ -37,7 +36,6 @@ class Day15 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 1576353
         val input = getExpandedInput()
         return solve(input.first, input.second)
             .getContent()

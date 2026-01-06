@@ -9,14 +9,11 @@ class Day12 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 1359028
         val grid = FileUtils.getGrid(INPUT)
         return getGroups(grid).sumOf { getFenceBorderPoints(it).size * it.size }.toString()
     }
 
-    // Valid result:
     override fun secondPart(): String {
-        // Valid result: 839780
         val grid = FileUtils.getGrid(INPUT)
         return getGroups(grid).sumOf { getFenceBorderCount(it) * it.size }.toString()
     }

@@ -9,12 +9,10 @@ class Day02 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 510
         return readFile(INPUT).count { report -> isValidReport(report) }.toString()
     }
 
     override fun secondPart(): String {
-        // Valid result: 553
         return readFile(INPUT)
             .count { report -> isValidReportAdvanced(report) }.toString()
     }

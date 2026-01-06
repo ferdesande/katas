@@ -8,10 +8,8 @@ class Day11 : AdventProblem {
         private const val INPUT = "/input11.txt"
     }
 
-    // Valid result: 185894
     override fun firstPart(): String = calculateStonesEvolution(25).toString()
 
-    // Valid result: 221632504974231
     override fun secondPart(): String = calculateStonesEvolution(75).toString()
 
     private fun calculateStonesEvolution(blinkCount: Int): Long {

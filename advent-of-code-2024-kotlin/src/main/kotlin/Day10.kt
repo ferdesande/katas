@@ -12,7 +12,6 @@ class Day10 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 514
         val stringGrid = FileUtils.getGrid(INPUT)
         val grid = stringGrid.getContent().associate { it.first to it.second.digitToInt() }
         return grid.entries
@@ -23,7 +22,6 @@ class Day10 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 1162
         val stringGrid = FileUtils.getGrid(INPUT)
         val grid = stringGrid.getContent()
             .associate { it.first to if (it.second == '.') -1 else it.second.digitToInt() }

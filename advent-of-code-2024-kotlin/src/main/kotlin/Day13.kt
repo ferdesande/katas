@@ -13,7 +13,6 @@ class Day13 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 29436
         val lines = FileUtils.getLines(INPUT)
         return extractMachines(lines)
             .mapNotNull { solveMachine(it) }
@@ -21,9 +20,7 @@ class Day13 : AdventProblem {
             .sumOf { 3 * it.aCount + it.bCount }.toString()
     }
 
-    // Valid result:
     override fun secondPart(): String {
-        // Valid result: 103729094227877
         val lines = FileUtils.getLines(INPUT)
         val a = extractMachines(lines)
             .map { machine -> Machine(machine.prize + SHIFT_POINT, machine.buttonA, machine.buttonB) }

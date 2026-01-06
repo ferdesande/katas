@@ -19,7 +19,6 @@ class Day15 : AdventProblem {
     private val combinationGenerator = CombinationGenerator()
 
     override fun firstPart(): String {
-        // Valid result: 21367368
         val ingredients = FileUtils.getLines(INPUT).mapNotNull { line -> parseIngredient(line) }
 
         return calculateRecipeScores(ingredients).map { a ->
@@ -32,7 +31,6 @@ class Day15 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 1766400
         val ingredients = FileUtils.getLines(INPUT).mapNotNull { line -> parseIngredient(line) }
 
         return calculateRecipeScores(ingredients).filter { it[CALORIES] == 500 }.map {

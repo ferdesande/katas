@@ -10,7 +10,6 @@ class Day03 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 2565
         val line = FileUtils.getLines(INPUT).single { it.isNotBlank() }
         var currenPoint = Point(0, 0)
         val visited = mutableSetOf(currenPoint)
@@ -23,7 +22,6 @@ class Day03 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 2639
         val line = FileUtils.getLines(INPUT).single { it.isNotBlank() }
         var santa = Point(0, 0)
         var robot = Point(0, 0)

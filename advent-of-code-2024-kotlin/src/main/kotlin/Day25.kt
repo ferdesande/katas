@@ -10,7 +10,6 @@ class Day25 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 3301
         val lines = FileUtils.getLines(INPUT)
         val emptyLines = lines
             .mapIndexed { index, s -> if (s.isBlank()) index else null }
@@ -28,7 +27,6 @@ class Day25 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result:
         return "No second part for this puzzle"
     }
 

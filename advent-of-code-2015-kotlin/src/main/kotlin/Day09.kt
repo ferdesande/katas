@@ -10,14 +10,12 @@ class Day09 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 117
         val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         val grid = createGrid(lines)
         return Dijkstra(grid).getShortest().toString()
     }
 
     override fun secondPart(): String {
-        // Valid result: 909
         val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         val grid = createGrid(lines)
         return Dijkstra(grid).getLongest().toString()

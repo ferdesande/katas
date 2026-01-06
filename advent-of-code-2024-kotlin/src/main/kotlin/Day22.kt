@@ -10,7 +10,6 @@ class Day22 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 16619522798
         return FileUtils.getLines(INPUT).filter { it.isNotBlank() }
             .map { it.toLong() }.sumOf {
                 var result = it
@@ -20,7 +19,6 @@ class Day22 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 1854
         return FileUtils.getLines(INPUT).filter { it.isNotBlank() }
             .map { it.toLong() }
             .map { value ->

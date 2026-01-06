@@ -13,13 +13,11 @@ class Day18 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 821
         val grid = FileUtils.getGrid(INPUT)
         return evolveGrid(grid, false)
     }
 
     override fun secondPart(): String {
-        // Valid result: 886
         val grid = FileUtils.getGrid(INPUT)
         return evolveGrid(grid, true)
     }

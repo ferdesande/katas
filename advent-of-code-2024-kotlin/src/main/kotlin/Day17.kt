@@ -9,13 +9,11 @@ class Day17 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 2,0,7,3,0,3,1,3,7
         val initialState = getInitialState()
         return Computer(initialState).run()
     }
 
     override fun secondPart(): String {
-        // Valid result: 247839539763386
         val initialState = getInitialState()
         var candidates = setOf(0L)
         while (candidates.isNotEmpty()) {

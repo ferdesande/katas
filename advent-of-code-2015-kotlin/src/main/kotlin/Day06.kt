@@ -15,7 +15,6 @@ class Day06 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 569999
         val grid = Grid.create(1000, 1000, LIGHT_OFF)
         getInstructions().forEach { instruction ->
             (instruction.bounds.minX..instruction.bounds.maxX)
@@ -35,7 +34,6 @@ class Day06 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 17836115
         val grid = Grid.create(1000, 1000, 0)
         getInstructions().forEach { instruction ->
             (instruction.bounds.minX..instruction.bounds.maxX)

@@ -12,7 +12,6 @@ class Day13 : AdventProblem {
     private val combinationFinder = CombinationFinder()
 
     override fun firstPart(): String {
-        // Valid result: 709
         val grid = FileUtils.getLines(INPUT)
             .mapNotNull { parseLine(it) }
             .groupBy({ it.first.first }, { it.first.second to it.second })
@@ -22,7 +21,6 @@ class Day13 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 668
         val grid = FileUtils.getLines(INPUT)
             .mapNotNull { parseLine(it) }
             .groupBy({ it.first.first }, { it.first.second to it.second })

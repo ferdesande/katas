@@ -11,7 +11,6 @@ class Day14 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 2696
         val herd = FileUtils.getLines(INPUT).mapNotNull { line -> parseDeer(line) }
         val positionByReindeer = herd.associateWith { reindeer -> reindeer.positionAfter(2503) }
 
@@ -19,7 +18,6 @@ class Day14 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 1084
         val herd = FileUtils.getLines(INPUT).mapNotNull { line -> parseDeer(line) }
         val positionByTimeByReindeer = (1..2503).associateWith { time ->
             herd.associateWith { reindeer -> reindeer.positionAfter(time) }

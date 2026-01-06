@@ -11,12 +11,10 @@ class Day04 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 254575
         return findNonce("00000")
     }
 
     override fun secondPart(): String {
-        // Valid result: 1038736
         return findNonce("000000")
     }
 

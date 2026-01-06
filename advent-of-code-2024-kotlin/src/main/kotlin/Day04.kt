@@ -9,12 +9,10 @@ class Day04 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 2468
         return countLinearOccurrences(readFile(INPUT)).toString()
     }
 
     override fun secondPart(): String {
-        // Valid result: 1864
         return countCrossOccurrences(readFile(INPUT)).toString()
     }
 

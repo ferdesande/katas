@@ -11,7 +11,6 @@ class Day18 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 246
         val grid = Grid.create(71, 71)
         val noise = extractNoise().take(1024).toSet()
 
@@ -19,7 +18,6 @@ class Day18 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 22,50
         val grid = Grid.create(71, 71)
         val noise = extractNoise()
         var maxValid = 1024

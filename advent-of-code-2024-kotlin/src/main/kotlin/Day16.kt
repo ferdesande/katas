@@ -23,12 +23,10 @@ class Day16 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 106512
         return (bestPath?.score ?: Int.MAX_VALUE).toString()
     }
 
     override fun secondPart(): String {
-        // Valid result: 563
         return bestPath?.visited?.size?.toString() ?: "Error"
     }
 

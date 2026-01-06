@@ -10,13 +10,11 @@ class Day17 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 4372
         val containers = FileUtils.getLines(INPUT).filter { it.isNotBlank() }.map { it.toInt() }
         return findCombinations(containers).size.toString()
     }
 
     override fun secondPart(): String {
-        // Valid result: 4
         val containers = FileUtils.getLines(INPUT).filter { it.isNotBlank() }.map { it.toInt() }
         val combinations = findCombinations(containers).map { it.size }.groupingBy { it }.eachCount()
         return combinations[combinations.minOf { it.key }].toString()

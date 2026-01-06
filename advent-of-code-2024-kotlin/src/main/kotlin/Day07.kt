@@ -10,14 +10,12 @@ class Day07 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 2314935962622
         return getProblemEntries()
             .filter { problemEntry -> canSolve(problemEntry) }
             .sumOf { it.result }.toString()
     }
 
     override fun secondPart(): String {
-        // Valid result: 401477450831495
         return getProblemEntries()
             .filter { problemEntry -> canSolve(problemEntry, 3) }
             .sumOf { it.result }.toString()

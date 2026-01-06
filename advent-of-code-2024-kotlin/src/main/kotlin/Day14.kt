@@ -13,7 +13,6 @@ class Day14 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 225552000
         val lines = FileUtils.getLines(INPUT)
         var robots = extractRobots(lines)
         repeat(100) { robots = robots.map { robot -> move(robot) } }
@@ -25,9 +24,7 @@ class Day14 : AdventProblem {
             .toString()
     }
 
-    // Valid result:
     override fun secondPart(): String {
-        // Valid result: 7371
         val lines = FileUtils.getLines(INPUT)
         var robots = extractRobots(lines).toSet()
         var count = 0

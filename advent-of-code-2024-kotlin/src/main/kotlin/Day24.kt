@@ -12,13 +12,11 @@ class Day24 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 55730288838374
         val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         return Circuit(lines).solve().toString()
     }
 
     override fun secondPart(): String {
-        // Valid result: fvw,grf,mdb,nwq,wpq,z18,z22,z36
         val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         val circuit = Circuit(lines)
         val swaps = mutableSetOf<String>()

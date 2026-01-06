@@ -9,7 +9,6 @@ class Day08 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 1333
         val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         val contents = lines.map { line -> getLineContents(line) }
 
@@ -17,7 +16,6 @@ class Day08 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 2046
         val lines = FileUtils.getLines(INPUT).filter { it.isNotBlank() }
         val contents = lines.map { line -> encode(line) }
 

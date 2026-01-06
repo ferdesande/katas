@@ -12,7 +12,6 @@ class Day12 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 119433
         val json = FileUtils.getLines(INPUT).single { it.isNotBlank() }
         val matches = Regex("""-?(\d+)""").findAll(json)
             .map { it.groupValues[0] }
@@ -23,7 +22,6 @@ class Day12 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 68466
         val json = FileUtils.getLines(INPUT).single { it.isNotBlank() }
         val root = objectMapper.readTree(json) ?: return "Invalid json"
         val nodeValues = root.map { getNodeValue(it) }

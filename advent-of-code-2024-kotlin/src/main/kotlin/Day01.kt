@@ -10,13 +10,11 @@ class Day01 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 3246517
         return readFile(INPUT).first.sorted()
             .zip(readFile(INPUT).second.sorted()) { first, second -> abs(first - second) }.sum().toString()
     }
 
     override fun secondPart(): String {
-        // Valid result: 29379307
         val input = readFile(INPUT)
         val countByNumber = input.second.groupingBy { it }.eachCount()
 

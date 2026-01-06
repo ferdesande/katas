@@ -9,7 +9,6 @@ class Day05 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 7307
         val fileBlocks = readFile(INPUT)
 
         val nextPagesByPage = getNextPagesByPage(fileBlocks)
@@ -20,7 +19,6 @@ class Day05 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 4713
         val fileBlocks = readFile(INPUT)
 
         val nextPagesByPage = getNextPagesByPage(fileBlocks)

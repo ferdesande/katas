@@ -9,7 +9,6 @@ class Day10 : AdventProblem {
     }
 
     override fun firstPart(): String {
-        // Valid result: 252594
         var value = FileUtils.getLines(INPUT).single() { it.isNotBlank() }
 
         repeat(40) {value = process(value)}
@@ -17,7 +16,6 @@ class Day10 : AdventProblem {
     }
 
     override fun secondPart(): String {
-        // Valid result: 3579328
         var value = FileUtils.getLines(INPUT).single() { it.isNotBlank() }
 
         repeat(50) {value = process(value)}
